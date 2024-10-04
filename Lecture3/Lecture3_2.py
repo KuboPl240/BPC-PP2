@@ -13,7 +13,6 @@ if L[0]==" ":
     L=L[2:]
 
 print(L)
-
 L=L.split(" ")   
 L[0],L[len(L)-1] =  L[len(L)-1],L[0]
 L = ' '.join(L)

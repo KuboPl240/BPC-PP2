@@ -1,7 +1,6 @@
 S="The car runs over the fence slowly."
 
-def Bubble_sort(String_to_sort: str):
-    word_list = String_to_sort.split(" ")
+def Bubble_sort(word_list: list):
     order = False
     if len(word_list)%2 == 0:
         order=True
@@ -12,7 +11,16 @@ def Bubble_sort(String_to_sort: str):
             if (order and (ord(word_list[i][0].lower()) > ord(word_list[i+1][0].lower()))) or (not(order) and (ord(word_list[i][0].lower()) < ord(word_list[i+1][0].lower()))):
                 sorted=False
                 word_list[i], word_list[i+1] = word_list[i+1], word_list[i]
-                print(word_list)
     return word_list
 
-print(Bubble_sort(S))
+word_list = S.split(" ")
+print("Words count: ", len(word_list))
+print("Sorted with my own bubble sort function: ",Bubble_sort(word_list))
+
+word_list = [i.lower() for i in word_list]
+if len(word_list)%2 == 0:
+    word_list.sort()
+else:
+    word_list.sort(reverse=True)
+print("Sorted with sort() function: ",word_list)
+
