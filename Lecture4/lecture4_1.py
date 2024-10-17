@@ -1,5 +1,5 @@
 
-S = "milk 18.20, butter 65.00, cheese cake 125.00"
+S = "milk 18.20, butter 65.00, cheese cake 125.00,"
 
 
 goods = []
@@ -7,7 +7,7 @@ items = S.split(", ")
 
 for item in items:
     name_price = item.rsplit(" ", 1) 
-    goods.append({"name": name_price[0], "price": float(name_price[1])})
+    goods.append({"name": name_price[0], "price": float(name_price[1].replace(",", ""))})
 
 cheapest_product = ""
 cheapest = float('inf')
