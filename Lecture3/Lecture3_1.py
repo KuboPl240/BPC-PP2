@@ -1,9 +1,10 @@
+
 S="The car runs over the fence slowly."
 
 def Bubble_sort(word_list: list):
-    order = False
+    order = True
     if len(word_list)%2 == 0:
-        order=True
+        order=False
     sorted = False
     while not(sorted):
         sorted=True
@@ -19,8 +20,8 @@ print("Sorted with my own bubble sort function: ",Bubble_sort(word_list))
 
 word_list = [i.lower() for i in word_list]
 if len(word_list)%2 == 0:
-    word_list.sort()
-else:
     word_list.sort(reverse=True)
+else:
+    word_list.sort()
 print("Sorted with sort() function: ",word_list)
 
